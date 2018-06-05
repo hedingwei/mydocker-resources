@@ -1,0 +1,11 @@
+crate:
+  image: crate
+  ports:
+    - "4200:4200"
+    - "5432:5432"
+    - "4300:4300"
+  volumes:
+    - /srv/crate/data:/parallels/data
+  environment:
+    CRATE_HEAP_SIZE: 512m
+  command: -Cnetwork.host=_site_ -Clicense.enterprise=true
